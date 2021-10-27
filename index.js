@@ -42,10 +42,10 @@ app.get('/message', function(req, res) {
 app.get('/', function(req, res) {
     console.log("Express responses: ", res);
 
-    axios.get('http://jsonsplaceholder.typicode.com/todos')
+    axios.get('http://jsonplaceholder.typicode.com/todos')
     .then(results => {
         console.log('results: ', results.data);
-        results.json(results.data);
+        res.send(results.data);
     })
     .catch(err => {
         console.log("You can write error messages here");
